@@ -1,16 +1,21 @@
+VERSION		=	0.1
+
 DOCKER		=	docker
+BUILD_FLAGS	=	--no-cache
 
 REGISTRY	=	git.dorian.cool
 OWNER		=	dorian
 NAME		=	denv
-TAG			=	0.1
 
-IMAGE		=	$(REGISTRY)/$(OWNER)/$(NAME):$(TAG)
+IMAGE		=	$(REGISTRY)/$(OWNER)/$(NAME)
 
 all: build push
 
 build:
-	$(DOCKER) build -t $(IMAGE) .
+	$(DOCKER) build $(BUILD_FLAGS) -t $(IMAGE):$(VERSION) -t $(IMAGE):latest .
+
+cache_build:
+	@$(MAKE) build BUILD_FLAGS=""
 
 push:
 	$(DOCKER) push $(IMAGE)
@@ -20,4 +25,4 @@ clean:
 
 re: clean all
 
-.PHONY: all clean re
+.PHONY: all build cache_build push clean re
