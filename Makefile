@@ -18,11 +18,7 @@ cache_build:
 	@$(MAKE) build BUILD_FLAGS=""
 
 push:
-	$(DOCKER) push $(IMAGE)
+	$(DOCKER) push $(IMAGE):$(VERSION)
+	$(DOCKER) push $(IMAGE):latest
 
-clean:
-	$(DOCKER) image rm -f $(IMAGE)
-
-re: clean all
-
-.PHONY: all build cache_build push clean re
+.PHONY: all build cache_build push
