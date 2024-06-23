@@ -1,4 +1,4 @@
-VERSION		=	0.2
+VERSION		=	0.3
 
 DOCKER		=	docker
 BUILD_FLAGS	=	--no-cache
