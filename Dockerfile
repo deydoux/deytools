@@ -5,6 +5,6 @@ WORKDIR /root/code
 
 RUN yes | unminimize
 RUN apt-get update
-RUN apt-get install -y build-essential htop libreadline-dev man strace valgrind
+RUN apt-get install -y build-essential git htop libreadline-dev man strace valgrind
 
 CMD ["bash"]
