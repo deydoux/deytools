@@ -4,7 +4,7 @@ DOCKER		=	docker
 BUILD_FLAGS	=	--no-cache
 
 REGISTRY	=	git.dorian.cool
-OWNER		=	dorian
+OWNER		=	deydoux
 NAME		=	denv
 
 IMAGE		=	$(REGISTRY)/$(OWNER)/$(NAME)
