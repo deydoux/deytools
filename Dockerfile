@@ -9,6 +9,7 @@ RUN apt-get install -y \
 	build-essential \
 	git \
 	htop \
+	imagemagick \
 	libreadline-dev \
 	man \
 	strace \
