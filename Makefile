@@ -1,13 +1,13 @@
-VERSION		=	0.5.0
+VERSION = 0.5.0
 
-DOCKER		=	docker
-BUILD_FLAGS	=	--no-cache
+DOCKER = docker
+BUILD_FLAGS = --no-cache
 
-REGISTRY	=	git.dorian.cool
-OWNER		=	deydoux
-NAME		=	denv
+REGISTRY = git.dorian.cool
+OWNER = deydoux
+NAME = denv
 
-IMAGE		=	$(REGISTRY)/$(OWNER)/$(NAME)
+IMAGE=$(REGISTRY)/$(OWNER)/$(NAME)
 
 all: build push
 
