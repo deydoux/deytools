@@ -1,5 +1,6 @@
 FROM ubuntu:latest
 LABEL org.opencontainers.image.source="https://github.com/deydoux/denv"
+LABEL version="0.5.0"
 
 RUN mkdir -p /root/code
 WORKDIR /root/code
