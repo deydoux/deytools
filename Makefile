@@ -1,4 +1,4 @@
-VERSION = 0.6.0
+-include .env
 
 DOCKER = docker
 BUILD_FLAGS = --no-cache
