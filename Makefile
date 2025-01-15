@@ -3,7 +3,7 @@ VERSION = 0.5.0
 DOCKER = docker
 BUILD_FLAGS = --no-cache
 
-REGISTRY = git.dorian.cool
+REGISTRY = ghcr.io
 OWNER = deydoux
 NAME = denv
 
