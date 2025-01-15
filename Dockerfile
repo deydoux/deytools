@@ -1,14 +1,14 @@
 FROM ubuntu:latest
 LABEL org.opencontainers.image.source="https://github.com/deydoux/denv"
-LABEL version="0.5.0"
+LABEL version="0.6.0"
 
 RUN mkdir -p /root/code
 WORKDIR /root/code
 
 RUN apt-get update
-RUN apt-get upgrade -y
 RUN apt-get install -y \
 	build-essential \
+	ffmpeg \
 	git \
 	htop \
 	imagemagick \
