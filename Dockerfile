@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 LABEL org.opencontainers.image.source="https://github.com/deydoux/denv"
-LABEL version="0.6.0"
+LABEL version="0.7.0"
 
 RUN mkdir -p /root/code
 WORKDIR /root/code
@@ -14,6 +14,7 @@ RUN apt-get install -y \
 	imagemagick \
 	libreadline-dev \
 	man \
+	neofetch \
 	strace \
 	unminimize \
 	valgrind
