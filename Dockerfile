@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 LABEL org.opencontainers.image.source="https://github.com/deydoux/denv"
-LABEL version="0.9.1"
+LABEL version="1.0.0"
 
 RUN mkdir -p /root/code
 WORKDIR /root/code
@@ -19,8 +19,12 @@ RUN apt-get update && apt-get install -y \
 	unminimize \
 	valgrind \
 	vim \
-	wget
+	wget \
+	zsh
 
 RUN yes | unminimize
 
-CMD ["bash"]
+RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+COPY home/* /root
+
+CMD ["zsh"]
