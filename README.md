@@ -1,5 +1,5 @@
 # deytools
-deydoux's toolbox
+deydoux's toolbox in a Docker image
 
 ## Install
 **bash**
