@@ -1,12 +1,12 @@
-# denv
-deydoux's dev environment
+# deytools
+deydoux's toolbox
 
 ## Install
 **bash**
 ```bash
-echo 'alias denv="docker run -it --rm -h denv -v .:/root/code ghcr.io/deydoux/denv:latest"' >> ~/.bashrc
+echo 'alias deytools="docker run -it --rm -h deytools -v .:/root/workspace ghcr.io/deydoux/deytools:latest"' >> ~/.bashrc
 ```
 **zsh**
 ```bash
-echo 'alias denv="docker run -it --rm -h denv -v .:/root/code ghcr.io/deydoux/denv:latest"' >> ~/.zshrc
+echo 'alias deytools="docker run -it --rm -h deytools -v .:/root/workspace ghcr.io/deydoux/deytools:latest"' >> ~/.zshrc
 ```

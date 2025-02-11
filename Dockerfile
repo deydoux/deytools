@@ -1,9 +1,9 @@
 FROM ubuntu:latest
-LABEL org.opencontainers.image.source="https://github.com/deydoux/denv"
-LABEL version="1.0.0"
+LABEL org.opencontainers.image.source="https://github.com/deydoux/deytools"
+LABEL version="1.0.1"
 
-RUN mkdir -p /root/code
-WORKDIR /root/code
+RUN mkdir -p /root/workspace
+WORKDIR /root/workspace
 
 RUN apt-get update && apt-get install -y \
 	build-essential \

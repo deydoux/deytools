@@ -5,7 +5,7 @@ BUILD_FLAGS = --no-cache
 
 REGISTRY = ghcr.io
 OWNER = deydoux
-NAME = denv
+NAME = deytools
 
 IMAGE=$(REGISTRY)/$(OWNER)/$(NAME)
 
