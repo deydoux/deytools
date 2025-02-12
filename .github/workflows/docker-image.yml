@@ -10,6 +10,9 @@ jobs:
     permissions:
       contents: read
       packages: write
+    strategy:
+      matrix:
+        platform: [linux/amd64, linux/arm64]
     steps:
 
     - name: Checkout
@@ -27,6 +30,7 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Docker Setup QEMU
+      if: matrix.platform == 'linux/arm64'
       uses: docker/setup-qemu-action@v3.3.0
       with:
         platforms: arm64
@@ -38,7 +42,7 @@ jobs:
       uses: docker/build-push-action@v6.12.0
       with:
         push: true
-        platforms: linux/amd64,linux/arm64
+        platforms: ${{ matrix.platform }}
         cache-from: type=gha
         cache-to: type=gha,mode=max
         tags: |
