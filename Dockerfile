@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 LABEL org.opencontainers.image.source="https://github.com/deydoux/deytools"
-LABEL version="1.0.1"
+LABEL version="1.1.0"
 
 RUN mkdir -p /root/workspace
 WORKDIR /root/workspace
@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y \
 	curl \
 	ffmpeg \
 	git \
+	git-filter-repo \
 	htop \
 	imagemagick \
 	libreadline-dev \
