@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 LABEL org.opencontainers.image.source="https://github.com/deydoux/deytools"
-LABEL version="1.1.0"
+LABEL version="1.1.1"
 
 RUN mkdir -p /root/workspace
 WORKDIR /root/workspace

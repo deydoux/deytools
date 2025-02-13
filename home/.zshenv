@@ -1,2 +1,2 @@
 export EDITOR="vim"
-export PS1="%n@%m %1~ %# "
+export PS1="%1~ %# "
