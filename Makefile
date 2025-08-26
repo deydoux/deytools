@@ -1,4 +1,4 @@
--include .env
+-include version.txt
 
 DOCKER = docker
 BUILD_FLAGS = --no-cache
@@ -12,7 +12,7 @@ IMAGE=$(REGISTRY)/$(OWNER)/$(NAME)
 all: build push
 
 build:
-	$(DOCKER) build $(BUILD_FLAGS) -t $(IMAGE):$(VERSION) -t $(IMAGE):latest .
+	$(DOCKER) build $(BUILD_FLAGS) -t $(IMAGE):latest -t $(IMAGE):$(MAJOR) -t $(IMAGE):$(MAJOR).$(MINOR) -t $(IMAGE):$(MAJOR).$(MINOR).$(PATCH) .
 
 cache_build:
 	@$(MAKE) build BUILD_FLAGS=""

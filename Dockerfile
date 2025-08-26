@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y \
 	imagemagick \
 	libreadline-dev \
 	libssl-dev \
+	ltrace \
 	man \
 	neofetch \
 	strace \
