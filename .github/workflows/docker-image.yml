@@ -8,7 +8,6 @@ jobs:
   build:
     runs-on: ubuntu-24.04
     permissions:
-      contents: read
       packages: write
     steps:
 
@@ -46,4 +45,3 @@ jobs:
           ghcr.io/${{ github.repository }}:${{ steps.version.outputs.MAJOR }}
           ghcr.io/${{ github.repository }}:${{ steps.version.outputs.MAJOR }}.${{ steps.version.outputs.MINOR }}
           ghcr.io/${{ github.repository }}:${{ steps.version.outputs.MAJOR }}.${{ steps.version.outputs.MINOR }}.${{ steps.version.outputs.PATCH }}
-        file: ./Dockerfile
