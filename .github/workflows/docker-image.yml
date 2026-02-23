@@ -52,10 +52,17 @@ jobs:
   push:
     needs: build
     permissions:
+      contents: read
       packages: write
     runs-on: ubuntu-24.04
 
     steps:
+    - uses: actions/checkout@v4
+
+    - id: version
+      name: Read version.txt
+      run: cat version.txt >> "$GITHUB_OUTPUT"
+
     - name: Download digests
       uses: actions/download-artifact@v4
       with:
@@ -78,5 +85,8 @@ jobs:
       run: |
         docker buildx imagetools create \
           -t ghcr.io/${{ github.repository }}:latest \
+          -t ghcr.io/${{ github.repository }}:${{ steps.version.outputs.MAJOR }} \
+          -t ghcr.io/${{ github.repository }}:${{ steps.version.outputs.MAJOR }}.${{ steps.version.outputs.MINOR }} \
+          -t ghcr.io/${{ github.repository }}:${{ steps.version.outputs.MAJOR }}.${{ steps.version.outputs.MINOR }}.${{ steps.version.outputs.PATCH }} \
           -t ghcr.io/${{ github.repository }}:${{ github.sha }} \
           $(printf 'ghcr.io/${{ github.repository }}@sha256:%s ' *)
